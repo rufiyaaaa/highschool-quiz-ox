@@ -4,7 +4,7 @@ const APP_VERSION = 1;
 const STORAGE_KEY = 'highschoolQuizOX.history';
 const RECENT_KEY = 'highschoolQuizOX.recent';
 const RECENT_LIMIT = 20;
-const CSV_FILE = '高校生クイズ○×クイズ過去問.csv';
+const CSV_FILE = 'questions.csv';
 const REQUIRED_COLUMNS = ['大会', '予選', '問題番号', '問題', '正解', '補足'];
 const HISTORY_COLUMNS = ['回答回数', '正解数', '不正解数', '正答率', '最終回答日時', '最終回答'];
 
