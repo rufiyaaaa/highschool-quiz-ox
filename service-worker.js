@@ -5,7 +5,7 @@ const APP_ASSETS = [
   'style.css',
   'app.js',
   'manifest.json',
-  '高校生クイズ○×クイズ過去問.csv',
+  'questions.csv',
   'icons/icon-180.png',
   'icons/icon-192.png',
   'icons/icon-512.png'
