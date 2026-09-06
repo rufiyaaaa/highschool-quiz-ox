@@ -1,0 +1,14 @@
+{
+  "name": "高校生クイズ ○×過去問",
+  "short_name": "高校生クイズ○×",
+  "description": "高校生クイズの○×過去問を1問ずつ学習するWebアプリ",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f7f5",
+  "theme_color": "#f7f7f5",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

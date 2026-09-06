@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f7f5">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="高校生クイズ○×">
+  <title>高校生クイズ ○×過去問</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <h1>高校生クイズ ○×過去問</h1>
+        <p id="dataStatus" class="data-status" aria-live="polite">問題を読み込み中…</p>
+      </div>
+      <button id="statsToggle" class="small-button" type="button" aria-expanded="false" aria-controls="statsPanel">成績</button>
+    </header>
+
+    <section id="statsPanel" class="stats-panel" hidden>
+      <div class="stats-grid">
+        <div><span>総回答数</span><strong id="totalAttempts">0</strong></div>
+        <div><span>総正解数</span><strong id="totalCorrect">0</strong></div>
+        <div><span>総不正解数</span><strong id="totalIncorrect">0</strong></div>
+        <div><span>全体正答率</span><strong id="totalRate">—</strong></div>
+      </div>
+      <div class="management-actions">
+        <button id="exportCsv" class="secondary-button" type="button">成績CSVを保存</button>
+        <button id="importCsv" class="secondary-button" type="button">成績CSVを読み込む</button>
+        <input id="importFile" type="file" accept=".csv,text/csv" hidden>
+        <button id="resetHistory" class="danger-button" type="button">全履歴を削除</button>
+      </div>
+      <p class="storage-note">回答履歴はこのSafariのlocalStorageに保存されます。大切な履歴は定期的にCSVへ保存してください。</p>
+    </section>
+
+    <section id="errorPanel" class="error-panel" role="alert" hidden>
+      <strong>問題データを読み込めませんでした。</strong>
+      <p id="errorMessage"></p>
+      <button id="retryLoad" class="secondary-button" type="button">再読み込み</button>
+    </section>
+
+    <section id="quizCard" class="quiz-card" aria-live="polite" hidden>
+      <div class="question-meta">
+        <span id="contestLabel"></span>
+        <span id="prelimLabel"></span>
+        <span id="numberLabel"></span>
+      </div>
+      <div id="questionText" class="question-text"></div>
+
+      <div id="answerButtons" class="answer-buttons">
+        <button class="answer-button" type="button" data-answer="○" aria-label="丸と回答">○</button>
+        <button class="answer-button" type="button" data-answer="×" aria-label="バツと回答">×</button>
+      </div>
+
+      <div id="resultArea" class="result-area" hidden>
+        <div id="resultMessage" class="result-message"></div>
+        <div id="supplement" class="supplement" hidden></div>
+        <button id="nextQuestion" class="next-button" type="button">次の問題</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
